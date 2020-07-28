@@ -11,7 +11,7 @@
             "Sid": "VisualEditor1",
             "Effect": "Allow",
             "Action": "ecr:*",
-            "Resource": "arn:aws:ecr:$AWS_REGION:$AWS_ACCOUNT:repository/$ECR_PATH"
+            "Resource": "arn:aws:ecr:$AWS_REGION:$AWS_ACCOUNT:repository/$AWS_ECR_PATH"
         }
     ]
 }
