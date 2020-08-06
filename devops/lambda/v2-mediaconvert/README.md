@@ -1,11 +1,16 @@
 # Mediaconvert Image Extractor Lambda Pipeline Install
 
+## Follow the Guide on Confluence
+
+[The guide on Confluence](https://drum.atlassian.net/wiki/spaces/DEV/pages/568459274/Install+CI+CD+for+v2-mediaconvert+with+CodePipeline+CodeBuild+and+CloudFormation) offers step-by-step instructions for setting up the CodePipeline.
+
 ## Edit ENV VARS and export:
 ```
 export AWS_ACCOUNT=(Current AWS Account ID)
 export MCBUCKET=(S3 bucket to monitor and perform conversions in)
 export MCENDPOINT=(MediaConvert Endpoint URL for your account - see guide at https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/emc-examples-getendpoint.html)
 export ENV=(Current environment, e.g. dev/staging/production)
+export TESTMP4=(path to test mp4 file)
 ```
 
 ## Add the roles and policies
@@ -30,9 +35,6 @@ aws iam put-role-policy --role-name mediaconvert-service-role --policy-name medi
 s3cmd mb s3://scout-$ENV-v2-mediaconvert-builds
 ```
 
-## Follow the Guide to create the Pipeline and CodeBuild project
-https://medium.com/@aashari/integrate-github-repository-to-lambda-function-using-codepipeline-b3072ad822fd
-
 ## Name for Pipeline, CodeBuild, etc:
 ```
 scout-$ENV-v2-mediaconvert
@@ -56,7 +58,7 @@ configure-s3-lambda-notification.sh $MCBUCKET mediaconvert-scout-flair-video-ima
 ## Test the function
 ```
 s3cmd ls s3://$MCBUCKET/ | sort -nk1 | tail -n 5
-s3cmd put ~/Dropbox/Work/Backgrounds/xwing1.mp4 s3://$MCBUCKET/
+s3cmd put $TESTMP4 s3://$MCBUCKET/
 s3cmd ls s3://$MCBUCKET/ | sort -nk1 | tail -n 5
 ```
 
