@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "VisualEditor0",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:*",
+        "codebuild:*",
+        "kms:*",
+	"iam:PassRole",
+        "s3:*"
+      ],
+      "Resource": "*"
+    }
+  ]
+}

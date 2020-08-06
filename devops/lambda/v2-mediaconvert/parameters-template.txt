@@ -1,0 +1,8 @@
+{
+  "LambdaRole": "arn:aws:iam::$AWS_ACCOUNT:role/mediaconvert-lambda-function-service-role",
+  "ENV": "$ENV",
+  "mcQueue": "arn:aws:mediaconvert:us-east-1:$AWS_ACCOUNT:queues/Default",
+  "mediaconvertEndpoint": "$MCENDPOINT",
+  "s3BucketName": "$MCBUCKET",
+  "mediaconvertServiceRole" : "arn:aws:iam::$AWS_ACCOUNT:role/mediaconvert-service-role"
+}
