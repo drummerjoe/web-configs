@@ -8,6 +8,7 @@
 ```
 export AWS_ACCOUNT=(Current AWS Account ID)
 export ENV=(Current environment, e.g. dev/staging/production)
+export SESADDR=(address you want to send email from)
 ```
 
 ## Add the roles and policies
