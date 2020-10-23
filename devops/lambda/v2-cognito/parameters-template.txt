@@ -1,4 +1,8 @@
 {
   "LambdaRole": "arn:aws:iam::$AWS_ACCOUNT:role/v2-cognito-lambda-function-service-role",
-  "SESFromAddress": "$SESADDR"
+  "SESFromAddress": "$SESADDR",
+  "OldUserPoolId": "$OLD_USER_POOL_ID",
+  "UserPoolId": "$USER_POOL_ID",
+  "SupportEmail": "$SUPPORT_EMAIL",
+  "SupportUrl": "$SUPPORT_URL"
 }

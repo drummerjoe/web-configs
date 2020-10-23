@@ -21,8 +21,6 @@ aws iam create-role --role-name v2-cognito-codepipeline-service-role --assume-ro
 aws iam put-role-policy --role-name v2-cognito-codepipeline-service-role --policy-name v2-cognito-codepipeline-service-role-policy --policy-document file://policies/codepipeline-service-role-policy.json
 aws iam create-role --role-name v2-cognito-lambda-function-service-role --assume-role-policy-document file://policies/lambda-function-service-role-trust-policy.json
 aws iam put-role-policy --role-name v2-cognito-lambda-function-service-role --policy-name v2-cognito-lambda-function-service-role-policy --policy-document file://policies/lambda-function-service-role-policy.json
-aws iam attach-role-policy --role-name v2-cognito-lambda-function-service-role --policy-arn "arn:aws:iam::aws:policy/AmazonAPIGatewayInvokeFullAccess"
-aws iam attach-role-policy --role-name v2-cognito-lambda-function-service-role --policy-arn "arn:aws:iam::aws:policy/AmazonS3FullAccess"
 ```
 
 ## Create S3 build bucket:
